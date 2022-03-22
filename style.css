@@ -22,8 +22,16 @@ body {
     font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
 } 
 
-.left-section {
+div {
+    display: flex;
+}
+
+.left-side {
     position: relative;
+}
+
+img {
+    max-height:100%;
 }
 
 header {
@@ -62,20 +70,16 @@ footer a {
     color: white;
 }
 
-.right-section {
+.right-side {
+    flex: 1;
+
     flex-direction: column;
-}
 
-div {
-    display: flex;
-}
-
-img {
-    max-height:100%;
+    overflow: scroll;
 }
 
 div section {
-    padding: 40px 350px 40px 40px
+    padding: 40px;
 }
 
 
@@ -89,16 +93,20 @@ div section {
     
     font-size: 1.5rem;
     font-weight: bold;
+
+    max-width: 800px;
+    
 }
 
 .form-section {
     background-color: white;
     box-shadow: 0 5px 10px lightgrey;
     flex: 0 0 auto;
+    min-width:100%;
 }
 
 form {
-    width: 70%;
+    max-width:900px;
     display: flex;
     flex-wrap: wrap;
 }
