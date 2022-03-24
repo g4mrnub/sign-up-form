@@ -140,14 +140,32 @@ input {
 
 }
 
-input:focus {
+input:focus, 
+input:focus:invalid,
+input:focus:required{
     outline: none;
     border-color: blue;
     box-shadow: 2px 2px 5px lightgrey;
 }
 
-input:invalid {
+input:invalid:not(:placeholder-shown):not(:focus){
     border-color: red;
+}
+
+input[type="password"] +  span {
+    position: relative;
+}
+
+input[type="password"] + span::after {
+    font-size: 0.7rem;
+    position: absolute;
+    left: 5px;
+    bottom: -20px;
+}
+
+input[type="password"]:invalid:not(:placeholder-shown):not(:focus) + span::after {
+    color: red;
+    content: "* Passwords do not match";
 }
 
 .button-section {
@@ -166,7 +184,20 @@ button {
     font-weight:bold;
 }
 
+button:active {
+    box-shadow: inset 5px 5px 10px rgb(46, 46, 46);
+    color:darkgrey;
+}
+
 a {
     color: #546633;
     font-weight: bolder;
+}
+
+a:hover {
+    color:lightgreen;
+}
+
+a:visited {
+    color:purple;
 }
